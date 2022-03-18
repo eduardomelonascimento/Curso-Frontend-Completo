@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Curso JavaScript Completo</h1>
+
+    <main class="cmain" id="idmain">
+        <h2>Subtítulo</h2>
+        <p id="pmain" class="paragrafomain">Parágrafo</p>
+    </main>
+    <section class="csection" id="idsection">
+        <h2>Subtítulo</h2>
+        <p class="cparagrafo">parágrafo</p>
+        <p class="cparagrafo">parágrafo</p>
+    </section>
+
+    <script>
+
+        document.getElementsByTagName('h2')[0].textContent += ' Alterado com JS';
+        document.getElementsByClassName('cparagrafo')[ 1].textContent += ' Alterado com JS';
+        document.querySelector('#pmain').textContent += ' Alterado com JS utilizando o seletor QuerySelector';
+        document.querySelector('h1').textContent += ' - Título alterado por JavaScript';
+
+    </script>
+
+</body>
+
+</html>
