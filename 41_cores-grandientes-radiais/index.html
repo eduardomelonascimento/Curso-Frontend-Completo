@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradientes Radiais</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    
+        .grupo-cores {
+            padding: 16px;
+            background-image: url(pattern002.png);
+            counter-reset: contador;
+            box-sizing: border-box;
+        }
+
+        .cores {
+            padding: 16px;
+            width: 85%;
+            max-width: 500px;
+            border: 16px solid rgba(0, 0, 0, .5);
+            margin: 20px auto;
+            font-weight: bold;
+            font-family: sans-serif;
+            counter-increment: contador;
+           
+        }
+
+        .cores::before {
+            content: counter(contador);
+        }
+
+        .cores:nth-child(2) {
+            background-color: tomato;
+            background-clip: content-box;
+        }
+
+        .cores:nth-child(3) {
+            background-color: rgb(58%, 50%, 0%);
+            background-clip: content-box;
+        }
+
+        .cores:nth-child(4) {
+            background-color: rgba(58%, 50%, 0%, .5);
+            background-clip: content-box;
+        }
+
+        .cores:nth-child(5) {
+            background-color: hsl(0deg, 100%, 50%);
+            background-clip: content-box;
+        }
+
+        .cores:nth-child(6) {
+            background-color: hsla(0deg, 100%, 50%, .4);
+            background-clip: content-box;
+        }
+
+        .cores:nth-child(7) {
+            background-image: linear-gradient(to right,  blue, transparent 50%, red), linear-gradient(240deg, green, yellow 50%);
+            background-clip: content-box, padding-box;
+        }
+
+        .cores:nth-child(8) {
+            background-image: radial-gradient(blue, red);
+            background-clip: content-box;
+        }
+        .cores:nth-child(9) {
+            background-image: radial-gradient(circle, blue, red);
+            background-clip: content-box;
+        }
+        .cores:nth-child(10) {
+            background-image: radial-gradient(circle, transparent, blue, yellow, green);
+            background-clip: padding-box;
+        }
+        .cores:nth-child(11) {
+            background-image: radial-gradient(closest-side at 25% 50%, transparent, blue, yellow, green);
+            background-clip: padding-box;
+        }
+        .cores:nth-child(12) {
+            background-image: radial-gradient(farthest-side at 50%, transparent, blue, yellow, green);
+            background-clip: padding-box;
+        }
+        .cores:nth-child(13) {
+            background-image: radial-gradient(closest-corner at 25% 50%, transparent, blue, yellow, green);
+            background-clip: padding-box;
+        }
+        .cores:nth-child(14) {
+            background-image: radial-gradient(farthest-corner at 50%, transparent, blue, yellow, green);
+            background-clip: padding-box;
+        }
+
+        .cores:nth-child(15) {
+            background-image: repeating-linear-gradient(to right, red 0%, yellow 15%, blue 35%);
+            background-clip: padding-box;
+        }
+
+        .cores:nth-child(17) {
+            background-image:  radial-gradient(closest-corner at 50% 15% ,black, transparent 76%), url(pattern002.png);
+            background-size: cover;
+            background-position: center -22px, center;
+            background-repeat: no-repeat;
+            background-clip: padding-box;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grupo-cores">
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+        <div class="cores">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis laudantium, reprehenderit quibusdam accusantium quo vitae. Iusto ipsam earum quidem esse! Earum, dolor sit quisquam officia ea deleniti laborum tempora.</p>
+        </div>
+    </div>
+</body>
+</html>

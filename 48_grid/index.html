@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+
+        .grid-container {
+            margin: 0 auto;
+            background-color: yellowgreen;
+            width: 95%;
+
+            display: grid;
+            grid-template-columns: repeat(3, [col-start] 1fr [col-end]);
+            grid-template-rows: [header-start] 100px [header-end nav-start] 50px [nav-end main-start] 1fr [main-end footer-start] 50px [footer-end];
+            gap: 20px 20px;
+        }
+
+        .grid-item {
+            text-align: center;
+            padding: 15px;
+            background-color: tomato;
+        }
+
+        .grid-item:nth-of-type(even) {
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+        }
+
+        .header {
+            grid-column: col-start / col-end 3;
+            grid-row: header;
+        }
+
+        .nav {
+            grid-column: col-start/col-end 2;
+            grid-row: nav;
+        }
+
+        .aside {
+        grid-column: col-start 3 / col-end 3; 
+        grid-row: nav-start / footer-end;
+        }
+
+        .main {
+            grid-column: col-start / col-end 2;
+            grid-row: main;
+            min-height: 250px;
+        }
+
+        .footer {
+            grid-column: col-start / col-end 3;
+            grid-row: footer;
+            background-color: rgba(30, 143, 255, .5);     
+        }
+        
+    </style>
+</head>
+<body>
+   
+    <h1>Grid Layout</h1>
+   
+    <div class="grid-container">
+
+        <div class="grid-item header">
+            header
+        </div>
+
+        <div class="grid-item nav">
+            nav
+        </div>
+
+        <div class="grid-item aside">
+            aside
+        </div>
+
+        <div class="grid-item main">
+            main
+        </div>
+        
+        <div class="grid-item footer">
+            footer
+        </div>
+
+    </div>
+
+</body>
+</html>

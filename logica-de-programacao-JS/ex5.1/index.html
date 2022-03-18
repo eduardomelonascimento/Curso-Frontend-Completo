@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação com JS</title>
+</head>
+
+<body>
+
+    <h1>Lógica de Programação com JS</h1>
+
+    <input type="button" value="+" onclick="calcular('+')">
+    <input type="button" value="-" onclick="calcular('-')">
+    <input type="button" value="*" onclick="calcular('*')">
+    <input type="button" value="/" onclick="calcular('/')">
+    <div id="res">
+
+    </div>
+
+    <script>
+
+        var n1 = Number(prompt('Digite um número'));
+        escreve(n1)
+       
+        function escreve(mensagem) {
+            var res = document.querySelector('#res');
+            res.innerHTML = mensagem;
+        }
+
+        function calcular(sinal) {
+            n1 = Number(document.querySelector('#res').textContent);
+            var n2 = Number(prompt(`Informe o valor que você quer adicionar a ${n1}`));
+            try {
+                var result = calculo(sinal, n1, n2);
+            } catch (e) {
+                alert(e);
+                return 0;
+            }
+            
+            escreve(result);
+        }
+        
+        function calculo(sinal, n1, n2) {
+            if (isNaN(n1) || isNaN(n2)) {
+                throw new Error('Erro, digite um valor numérico!')
+            }
+            var numeroCalculado = null;            
+            switch (sinal) {
+                case '+':
+                    numeroCalculado = n1 + n2;
+                    break;
+                case '-':
+                    numeroCalculado = n1 - n2;
+                    break;
+                case '*':
+                    numeroCalculado = n1 * n2;
+                    break;
+                case '/':
+                    numeroCalculado = n1 / n2;
+                    break;
+            }
+            return numeroCalculado;
+        }
+
+    </script>
+
+</body>
+
+</html>

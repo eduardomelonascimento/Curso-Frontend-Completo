@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores Compostos de CSS</title>
+    <style>
+        
+        article:not(.destaque) {
+            padding-bottom: 30px;
+            border-bottom: 3px solid black;
+        }
+
+        article:nth-child(1) a {
+            color: red;
+        }
+
+        article:nth-child(2) > p {
+            color: tomato;
+        }
+
+        article:nth-child(3) h1 + p {
+            color: dodgerblue;
+        }
+
+        article:nth-child(4) h1 ~ p {
+            color: dodgerblue;
+        }
+
+        .destaque {
+            background-color: turquoise;
+        }
+
+        a[href="#"] {
+            opacity: .3;
+        }
+
+        a[href^="http"] {
+            color: yellow;
+        }
+
+        a[href$=".pdf"] {
+            color: red;
+            border: 1px dashed;
+        }
+
+        a[title] {
+            color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <h1>Título</h1>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+    </article>
+
+    <article>
+        <h1>Título</h1>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+    </article>
+
+    <article>
+        <p>lorem ipsum sit amet</p>
+        <h1>Título</h1>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+    </article>
+
+    <article>
+        <p>lorem ipsum sit amet</p>
+        <h1>Título</h1>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+    </article>
+
+    <article class="destaque">
+        <p>lorem ipsum sit amet</p>
+        <h1>Título</h1>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+        <p>Parágrafo <a href="#">link com <strong>negrito</strong></a></p>
+    </article>
+
+        <ul>
+            <li><a href="#">link falso</a></li>
+            <li><a href="#">link falso</a></li>
+            <li><a href="http://jw.org" target="_blank">link do jw</a></li>
+            <li><a href="http://jw.org/.pdf" target="_blank">link do jw</a></li>
+            <li><a title="veja exercicio" href="../08_wireframebasico/index.html">link interno</a></li>
+        </ul>
+</body>
+</html>

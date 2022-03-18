@@ -1,0 +1,12 @@
+body {
+    font-family: serif;
+    color: greenyellow;
+    background-color: dodgerblue;
+    font-size: 2rem;
+}
+
+a::after {
+    content: ' ('attr(href)')';
+    text-decoration: none;
+    margin-left: 10px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Formulário</title>
+</head>
+<body>
+    <h1>Exemplo de Formulário</h1>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <label for="email">Email: <input type="email" name="email" id="email" required></label>
+            <label for="children">Número de filhos: <input type="number" name="children" id="children" min="0" max="10"></label>
+            <input type="date" name="date" id="date" max="2004-01-29">
+            <span>Sexo:</span>
+            <label for="masc"><input type="radio" name="sex" value="M" id="masc">Masculino</label>
+            <label for="fem"><input type="radio" name="sex" value="F" id="fem">Feminino</label>
+            <label for="regiao:"> Região:
+                <select name="regiao" id="estado">
+                    <option value="" selected disabled>Selecione</option>
+                    <option value="N">Norte</option>
+                    <option value="ND">Nordeste</option>
+                    <option value="CO">Centro-Oeste</option>
+                    <option value="SD">Sudeste</option>
+                    <option value="S">Sul</option>
+                </select>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Área de Interesse</legend>
+            <label for="html"><input type="checkbox" name="html" id="html" value="html">HTML</label>
+            <label for="css"><input type="checkbox" name="css" id="css" value="css">CSS</label>
+            <label for="js"><input type="checkbox" name="js" id="js" value="js">JavaScript</label>
+        </fieldset>
+        <fieldset>
+            <legend>Mensagem</legend>
+            <textarea name="feedback" id="msg" cols="30" rows="10" style="resize: none;" readonly>Termos de Uso: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium aspernatur minima porro, totam eius ea amet. Suscipit numquam quas sequi incidunt ipsa totam eligendi consequuntur ipsam. Itaque deleniti vel ullam.</textarea>
+            <label for="accept" style="display: block; width: fit-content;"><input type="checkbox" name="accept" id="accept" required>Li e Aceito os termos</label>
+        </fieldset>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

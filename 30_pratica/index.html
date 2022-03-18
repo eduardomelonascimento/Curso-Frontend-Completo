@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+        
+        a {
+            display: block;
+            width: fit-content;
+        }
+        
+        a[target="_blank"]::after {
+            content: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKNmjqv3_RyNjHxFb5wOyn1S36sfuioVc4LVHfM--TtYfhuo7qy8vjMSFlnvIvFlWnOrc&usqp=CAU);
+        }
+
+        a[href$=".pdf"] {
+            color: red;
+            text-decoration: none;
+        }
+
+        a:last-of-type {
+            padding-bottom: 15px;
+            border-bottom: 3px solid black;
+            margin-bottom: 15px;
+        }
+
+        .ckb {
+            display: inline-block;
+            border-radius: 3px;
+            border: 2px solid #bbb;
+            background-color: #ccc;
+            width: 15px;
+            height: 15px;
+            margin-right: 4px;
+            margin-bottom: -4px;
+        }
+
+        label {
+            line-height: 15px;
+            display: inline-block;
+        }
+
+        input[type="checkbox"] {
+            display: inline-block;
+            height: 0px;
+            width: 0px;
+            overflow: hidden;
+            visibility: hidden;
+        }
+        
+        input[type="checkbox"]:checked + label .ckb {
+            background-color: tomato;
+            position: relative;
+        }
+
+        input[type="checkbox"]:checked + label .ckb::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 4px;
+            left: 4px;
+            right: 4px;
+            border: 2px solid white;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            transform: rotate(45deg);
+            
+        }
+
+    </style>
+</head>
+<body>
+    <a href="https://jw.org" target="_blank">Link externo</a>
+    <a href="arquivo.pdf">Link do pdf</a>
+
+    <input type="checkbox" name="abc" id="ckb">
+    <label for="ckb"><span class="ckb"></span> Li e e aceito o contrato</label>
+</body>
+</html>

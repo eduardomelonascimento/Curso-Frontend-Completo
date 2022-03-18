@@ -1,0 +1,47 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação com JS</title>
+</head>
+
+<body>
+
+    <h1>Lógica de Programação com JS</h1>
+
+
+    <script>
+
+        var num = Number(prompt("Informe um número"));
+        var cont = 1;        
+        
+        while(cont <= 1000) {
+            document.write(`${num} x ${cont} e igual a ${num * cont} <br>`);
+            
+            if (cont % 10 == 0) {
+                document.write (`<hr>`)
+            }
+            cont++;   
+            
+        }
+        document.write(`Saiu do loop<br>`);
+        cont = 1001;
+        var num = Number(prompt("Informe um número"));
+        
+        do {
+            document.write(`${num} x ${cont} e igual a ${num * cont} <br>`);
+            cont++;
+        } while (cont <= 1000)
+        document.write(`Saiu do loop<br>`);
+
+        var num = Number(prompt("Informe um número"));
+        for(cont = 1; cont <= 1000; cont++) {
+            document.write(`${num} x ${cont} e igual a ${num * cont} <br>`)
+            if (cont % 10 == 0) {
+                document.write (`<hr>`)
+            }
+        }
+    </script> 
+
+</body>
+</html>

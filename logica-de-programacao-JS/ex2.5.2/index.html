@@ -1,0 +1,39 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação com JS</title>
+</head>
+
+<body>
+
+    <h1>Lógica de Programação com JS</h1>
+
+
+    <script>
+
+        var num1 = parseInt(prompt(`Jogador 1, informe o número que você quer apostar.`));
+        var num2 = parseInt(prompt(`Jogador 2, informe o número que você quer apostar.`));
+        var dado = parseInt(Math.random() * 2);
+        alert(`Valor sorteado: ${dado}`);
+        if (num1 == num2) {
+            alert(`Empate!`);
+        } else if (dado == 1) {
+            if (num1 > num2) {
+                alert(`O jogador 1 venceu!`);
+            } else {
+                alert(`O jogador 2 venceu!`);
+            }
+        } else if (dado == 0) {
+            if (num1 < num2) {
+                alert(`O jogador 1 venceu!`);
+            } else {
+                alert(`O jogador 2 venceu!`);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

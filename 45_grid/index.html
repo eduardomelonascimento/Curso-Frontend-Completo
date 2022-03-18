@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+
+        .grid-container {
+            margin: 0 auto;
+            background-color: yellowgreen;
+            width: 95%;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 100px 50px 1fr 50px;
+            gap: 20px 20px;
+        }
+
+        .grid-item {
+            text-align: center;
+            padding: 15px;
+            background-color: tomato;
+        }
+
+        .grid-item:nth-of-type(even) {
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+        }
+
+        .header {
+            grid-column: 1 / -1;
+        }
+
+        .nav {
+            grid-column: 1/3;
+        }
+
+        .aside {
+        grid-column: 3 / -1; 
+        grid-row: 2 / -1;
+        z-index: 1;
+        }
+
+        .main {
+            grid-column: 1 / 3;
+            min-height: 250px;
+        }
+
+        .footer {
+            grid-column: 1 / -1;
+            grid-row: 4 / 5;
+            background-color: dodgerblue;
+            
+        }
+    </style>
+</head>
+<body>
+   
+    <h1>Grid Layout</h1>
+   
+    <div class="grid-container">
+
+        <div class="grid-item header">
+            header
+        </div>
+
+        <div class="grid-item nav">
+            nav
+        </div>
+
+        <div class="grid-item aside">
+            aside
+        </div>
+
+        <div class="grid-item main">
+            main
+        </div>
+        
+        <div class="grid-item footer">
+            footer
+        </div>
+
+    </div>
+
+</body>
+</html>

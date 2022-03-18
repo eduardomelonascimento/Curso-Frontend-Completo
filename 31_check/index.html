@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio CheckBox lindão</title>
+    <style>
+        
+        body {
+            font-family: sans-serif;
+            font-weight: bold;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: block;
+            margin-top: 100px;
+        }
+        
+        label {
+            cursor: pointer;
+            display: block;
+            width: fit-content;
+            margin-left: 10px;
+        }
+
+        label:nth-of-type(2) {
+            margin: 10px;  
+        }
+        
+        input[type="checkbox"] {
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: block;
+        }
+        
+        input[type="checkbox"] + span {
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+            border-radius: 100px;
+            margin-bottom: -5.6px;
+            position: relative;
+            background-color: #ccc;
+        }
+        
+
+        input[type="checkbox"] + span::before {
+            display: inline-block;
+            content: '';
+            margin: 3px;
+            height: 18px;
+            width: 18px;
+            background-color: white;
+            border-radius: 50%;
+            transition: all .3s ease-in-out;
+        }
+
+        input[type="checkbox"]:checked + span::before {
+            transform: translateX(26px);
+            background-color: tomato;
+            border-radius: 50%;
+            transition: all .3s ease-in-out;
+        }
+
+        input[type="checkbox"] ~ .text {
+            color: rgb(151, 151, 151);;
+            transition: color .4s ease-in-out;
+            transition-delay: .2s;
+        }
+        
+        input[type="checkbox"]:checked ~ .text {
+            color: tomato;
+            transition: color .4s ease-in-out;
+            transition-delay: .2s;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <label tabindex="0">
+            <input type="checkbox" id="ckb" class="ckb">
+            <span class="ckb-custom"></span>
+            <span class="text">Esporte</span>
+        </label>
+        <label tabindex="0">
+            <input type="checkbox" class="ckb">
+            <span class="ckb-custom"></span>
+            <span class="text">Política</span>
+        </label>
+        <label tabindex="0">
+            <input type="checkbox" class="ckb">
+            <span class="ckb-custom"></span>
+            <span class="text">Educação</span>
+        </label>
+    </div>
+
+</body>
+</html>

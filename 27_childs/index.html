@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Childs and type</title>
+    <style>
+        div p:nth-of-type(2n) {
+            color: red;
+            padding-bottom: 20px;
+            border-bottom: 2px solid black;
+        }
+
+        .destaque:nth-of-type(2) {
+            background-color: dodgerblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>parágrafo</p>
+        <p class="destaque">parágrafo</p>
+        
+        <p>parágrafo</p>
+        <p class="destaque">parágrafo</p>
+        
+        <p>parágrafo</p>
+        <p>parágrafo</p>
+        
+        <p>parágrafo</p>
+        <p>parágrafo</p>
+        
+        <p>parágrafo</p>
+        <p>parágrafo</p>
+        
+    </div>
+</body>
+</html>

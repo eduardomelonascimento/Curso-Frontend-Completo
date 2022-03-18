@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        .div1 {
+            width: 150px;
+            height: 150px;
+            background-color: dodgerblue;
+            /*transform: translate(100%, 50%);*/
+            position: relative;
+            top: 40px;
+            left: 40%;
+        }
+
+        .div2 {
+            width: 150px;
+            height: 150px;
+            background-color: tomato;
+            
+        }
+
+        .div3 {
+            width: 50%;
+            overflow: hidden;
+            border: 1px solid black;
+        }
+
+        .div3-interna {
+            background-color: tomato;
+            transform: translate(25%);
+        }
+
+        .div4 {
+            width: 50%;
+            overflow: hidden;
+            border: 1px solid black;
+        }
+
+        .div4-interna {
+            background-color: tomato;
+            transform: rotate(130deg);
+            
+        }
+        
+        .div5 {
+            width: 50%;
+            overflow: hidden;
+            border: 1px solid black;
+        }
+
+        .div5-interna {
+            background-color: tomato;
+            transform: rotate(130deg);
+            
+        }
+        
+
+        .div6 {
+            width: 50%;
+            overflow: hidden;
+            border: 1px solid black;
+        }
+
+        .div6-interna {
+            background-color: tomato;
+            transform: rotate(330deg) translate(40px, 40px);
+
+        }
+    
+        .div7 {
+            width: 50%;
+            overflow: hidden;
+            border: 1px solid black;
+        }
+
+        .div7-interna {
+            background-color: tomato;
+            transform: translate(20px, -15px) rotate(330deg);
+            transform-origin: right;
+        }
+    
+        .div8 {
+            width: 50px;
+            height: 50px;
+            background-color: tomato;
+            transform: skew(20deg, 20deg);
+        }
+
+        .div9 {
+            transform: scale();
+            width: 50px;
+            height: 50px;
+            background-color: dodgerblue;
+            transform: translate(50%) scale(-1, -1);
+            transition: transform .5s;
+        }
+
+        .div9:hover {
+            transform: translate(100%) scale(2, 2);
+        }
+
+        </style>
+</head>
+<body>
+    <div class="div1">
+        div1
+    </div>
+
+    <div class="div2">
+        div2
+    </div>
+
+    <div class="div3">
+        <div class="div3-interna">conteúdo</div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, nostrum soluta. Fugit alias voluptates, neque quos ut quibusdam recusandae, eos architecto eaque ullam minima earum accusantium iste error, officia voluptatem.</p>
+    </div>
+
+    <div class="div4">
+        <div class="div4-interna">conteúdo</div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, nostrum soluta. Fugit alias voluptates, neque quos ut quibusdam recusandae, eos architecto eaque ullam minima earum accusantium iste error, officia voluptatem.</p>
+    </div>
+
+    <div class="div5">
+        <div class="div5-interna">conteúdo</div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, nostrum soluta. Fugit alias voluptates, neque quos ut quibusdam recusandae, eos architecto eaque ullam minima earum accusantium iste error, officia voluptatem.</p>
+    </div>
+
+    <div class="div6">
+        <div class="div6-interna">conteúdo</div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, nostrum soluta. Fugit alias voluptates, neque quos ut quibusdam recusandae, eos architecto eaque ullam minima earum accusantium iste error, officia voluptatem.</p>
+    </div>
+
+    <div class="div7">
+        <div class="div7-interna">conteúdo</div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, nostrum soluta. Fugit alias voluptates, neque quos ut quibusdam recusandae, eos architecto eaque ullam minima earum accusantium iste error, officia voluptatem.</p>
+    </div>
+
+    <div class="div8">div8</div>
+    <div class="div9">div9</div>
+</body>
+</html>

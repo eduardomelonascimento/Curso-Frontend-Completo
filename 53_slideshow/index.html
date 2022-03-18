@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation - Slideshow</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        @keyframes slide {
+            0%{
+                transform: translateY(0);
+            }
+            23%{
+                transform: translateY(-0vh);
+            }
+            25%{
+                transform: translateY(-50vh);
+            }
+            47%{
+                transform: translateY(-50vh);
+            }
+            50% {
+                transform: translateY(-100vh);
+            }
+            73% {
+                transform: translateY(-100vh);
+            }
+            75% {
+                transform: translateY(-150vh);
+            }
+            100%{
+                transform: translateY(-150vh);
+            }
+        }
+
+        body {
+            font-family: sans-serif;
+            color: white;
+            background-color: #1a1818;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 900px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #slide-externo {
+            width: 80%;
+            height: 50vh;
+            border: 8px solid;
+            box-shadow: 0 0 10px black;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slide-interno {
+            animation: slide 5s infinite alternate both;
+        }
+        
+        .slide-interno > img {
+            width: 100%;
+            height: 49vh;
+            object-fit: cover;
+            display: block;
+            
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Animation - Slideshow</h1>
+
+    <div id="slide-externo">
+        <div class="slide-interno">
+            <img src="/html-css/projetos/projeto-strata/imagens/01.jpg">
+            <img src="/html-css/projetos/projeto-strata/imagens/02.jpg">
+            <img src="/html-css/projetos/projeto-strata/imagens/03.jpg">
+            <img src="/html-css/projetos/projeto-strata/imagens/04.jpg">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+
+        /* shorthand do animation: animation: name duration timing-function delay iteration-count direction fill-mode animation-play-state;*/
+
+        @keyframes anda {
+            0%{
+                transform: translate(0);
+                background: yellow;
+                transform: translate(-10vw -10vh);
+            }
+
+            33%{
+                opacity: .3;
+                height: 90px;
+                width: 90px;
+                background-color: tomato;            
+                transform: translateX(80vw) translateY(40vh);
+            }
+
+            66% {
+                opacity: .8;
+                height: 45px;
+                width: 45px;
+                background-color: greenyellow;
+                transform: translateY(-20vh);
+            }
+            100%{
+                transform: translateX(80vw) translateY(40vh);
+                background: dodgerblue;
+                height: 90px;
+                width: 90px;
+            }
+        }
+        
+        body {
+            overflow: hidden;
+        }
+        .animation-time > div{
+            width: 50px;
+            height: 50px;
+            border: 2px solid inherit;
+            border-radius: 50%;
+            margin-bottom: 5px;
+        }
+        .animation-time > div:nth-child(1) {
+            animation: anda 5s ease-out infinite alternate;
+        }
+        .animation-time > div:nth-child(2) {
+            animation: anda 5s ease-in-out infinite alternate;
+        }
+        .animation-time > div:nth-child(3) {
+            animation: anda 4s ease-in-out 1s infinite alternate;
+
+        }
+        .animation-time > div:nth-child(4) {
+            background-color: tomato;
+            animation: anda 5s ease-in-out 1.5s infinite alternate both;
+        }
+        .animation-time > div:nth-child(5) {
+            animation: anda 3s ease-in-out .5s infinite alternate both running;
+        }
+        .animation-time > div:nth-child(5):hover {
+            animation-play-state: paused;
+        }
+    </style>
+
+</head>
+
+<body>
+<!--     
+    <h1>Animation</h1>
+    <p>shorthand do animation: <strong>animation: name duration timing-function delay iteration-count direction fill-mode animation-play-state;</strong></p> -->
+    <div class="animation-time">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

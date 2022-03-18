@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo</title>
+    <style>
+        input[type="checkbox"] {
+            width: 30px;
+            height: 30px;
+        }
+
+        input[type="checkbox"]:checked {
+            width: 50px;
+            height: 50px;
+        }
+
+        button:disabled {
+            background-color: tomato;
+            color: white;
+            border: 1px solid tomato;
+        }
+
+        p {
+            background-color: dodgerblue;
+        }
+
+        p:empty::before {
+            content: "Parágrafo vazio";
+            background-color: tomato;
+        }
+
+        input[type="text"]:focus{
+            background-color: tomato;
+        }
+
+        a:focus, a:hover {
+            background-color: dodgerblue;
+        }
+
+        div:first-of-type {
+            margin-top: 40px;
+        }
+
+        div:last-of-type {
+            margin-bottom: 40px;
+        }
+
+        input::placeholder {
+            color: tomato;
+            font-size: 1rem;
+        }
+
+        input[value]  {
+            color: dodgerblue;
+            font-size: 1.5rem;
+        }
+
+        input[type="text"]:nth-of-type(2) {
+            background-color: tomato;
+        }
+
+        input:read-only {
+            background-color: dodgerblue;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <label for="check"><input type="checkbox" id="check" value="sim"></label>
+    <button>vai</button>
+    <button disabled>volta</button>
+    <p>paragrafo 1</p>
+    <p></p>
+    <p></p>
+    <input type="text">
+    <a href="#">link vazio</a>
+    <a href="#">link vazio</a>
+    <a href="#">link vazio</a>
+    <div tabindex="0">div0</div>
+    <div tabindex="0">div1</div>
+    <div tabindex="0">div2</div>
+    <div tabindex="0">div3</div>
+    <input type="text">
+    <input type="text" value="valor inicial">
+    <input type="text" value="valor inicial" readonly>
+    <input type="text" value="valor inicial" disabled>
+    <input type="text" placeholder="valor inicial">
+
+</body>
+</html>

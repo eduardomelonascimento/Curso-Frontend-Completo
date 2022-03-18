@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        (function () {
+            function calcularMedia() {
+                var total = 0;
+                for (x = 0; typeof arguments[x] === 'number'; x++) {
+                    total += arguments[x];
+                }
+                return total / arguments.length;
+            }
+            var media1 = calcularMedia(5, 0, 9);
+            var media2 = calcularMedia(10, 20, 30, 40, 50);
+            console.log(`Media = ${media1}`);
+            console.log(`Media = ${media2}`);
+        })();
+
+    </script>
+
+</body>
+
+</html>

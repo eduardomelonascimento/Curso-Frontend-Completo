@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação com JS</title>
+</head>
+
+<body>
+
+    <h1>Lógica de Programação com JS</h1>
+
+    <div>
+        <p id="output"></p>
+    </div>
+
+    <script>
+
+        var msg = '';
+        var produtos = [
+            { 'produto': 'lapis', 'preco': 1.8, 'estoque': 100 },
+            { 'produto': 'caneta', 'preco': 2.6, 'estoque': 100 },
+            { 'produto': 'borracha', 'preco': 2.2, 'estoque': 100 }];
+
+        var output = document.querySelector('#output');
+
+        for (var i = 0; i < produtos.length; i++) {
+            msg += `<h2>Produto: ${produtos[i].produto}</h2> Preço: ${produtos[i].preco} <br> Quantidade em estoque: ${produtos[i].estoque}<br>`;    
+        }
+
+        output.innerHTML = msg;
+
+    </script>
+
+</body>
+
+</html>

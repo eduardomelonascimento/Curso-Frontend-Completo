@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação com JS</title>
+</head>
+
+<body>
+
+    <h1>Lógica de Programação com JS</h1>
+
+    <input type="button" value="+" onclick="somar()">
+    <input type="button" value="-" onclick="subtrair()">
+    <input type="button" value="*" onclick="multiplicar()">
+    <input type="button" value="/" onclick="dividir()">
+    <div id="res">
+
+    </div>
+
+    <script>
+
+        var n1 = Number(prompt('Digite um número'));
+        var n2 = 0;
+    
+        function escreve() {
+            var res = document.querySelector('#res');
+            res.innerHTML = n1;
+        }
+
+        function somar() {
+            n2 = Number(prompt(`Informe o valor que você quer adicionar a ${n1}`));
+            n1 = n1 + n2;
+            escreve();
+        }
+
+        function subtrair() {
+            n2 = Number(prompt(`Informe o valor que você quer subtrair de ${n1}`));
+            n1 = n1 - n2;
+            escreve();
+        }
+
+        function multiplicar() {
+            n2 = Number(prompt(`Informe o valor pelo qual ${n1} será multiplicado`));
+            n1 = n1 * n2;
+            escreve();
+        }
+
+        function dividir() {
+            n2 = Number(prompt(`Informe o valor pelo qual ${n1} será dividido`));
+            n1 = n1 / n2;
+            escreve();
+        }
+
+    </script>
+
+</body>
+
+</html>

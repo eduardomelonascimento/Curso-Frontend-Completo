@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação com JS</title>
+</head>
+
+<body>
+
+    <h1>Lógica de Programação com JS</h1>
+
+    <p id="output"></p>
+
+    <script>
+        
+        var user1 = {'nome': 'Maria', 'email': 'maria@domain.com'};
+        var user2 = {'nome': 'joao', 'email': 'joao@domain.com'};
+        var user3 = {'nome': 'jose', 'email': 'jose@domain.com'};
+        
+        var users = [user1, user2, user3];
+        var msg = ''
+        var output = document.querySelector('#output')
+        for (var i = 0; i < users.length; i++) {  
+            msg += `<h2>Nome: ${users[i].nome}</h2> Email: ${users[i].email} <br><hr>`
+        }
+        output.innerHTML = msg;
+    </script>
+
+</body>
+
+</html>

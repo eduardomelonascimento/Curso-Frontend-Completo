@@ -1,0 +1,34 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação com JS</title>
+</head>
+
+<body>
+
+    <h1>Lógica de Programação com JS</h1>
+
+
+
+    <script>
+
+        var numeros = new Array(25, 30, 45, 28, 0, 12, 78, 64);
+        var somaDosPares = somaPar(numeros);      
+        alert( `A soma é ${somaDosPares}`)
+        function somaPar(numeros) {
+            var soma = 0;
+            for (i = 0; i < numeros.length; i++) {
+
+                if (!isNaN(numeros[i]) && numeros[i] % 2 === 0) {
+                    soma += numeros[i];
+                }
+            }
+            return soma;
+        }
+
+    </script>
+
+</body>
+
+</html>
