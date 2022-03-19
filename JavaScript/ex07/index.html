@@ -12,18 +12,56 @@
 
     <h1>Curso JavaScript Completo</h1>
 
-    <input type="text" id="sobreNome">
+
 
 
     <script>
 
-        (function () {
-            var nome = 'Eduardo';
-            var sobrenome = 'Nascimento';
-            var $output = document.querySelector('#sobreNome');
-            $output.disabled = true;
-            $output.value = `${nome} ${sobrenome}`
-        })()
+        var hoje = new Date;
+        hoje = hoje.getDay();
+        console.log(hoje);
+
+        var x = [0];
+        function mudaArray(x) {
+            var y = x;
+            y.push(2);
+            x.push(8);
+        }
+        mudaArray(x);
+
+        var n = 0;
+        function mudaN(n) {
+            var n1 = n;
+            console.log(++n1)
+        }
+        mudaN(n)
+
+        console.log('----------------')
+
+        var caneta1 = {
+            cor: 'red',
+  
+            mudaCor: function (cor) {
+                this.cor = cor;
+            }
+        }
+
+        var caneta2 = {
+            cor: 'red',
+            
+            mudaCor: function (cor) {
+                this.cor = cor;
+            }
+        }
+
+        caneta1.mudaCor('yellow')
+
+        console.log(caneta1)
+
+
+
+
+
 
     </script>
 
