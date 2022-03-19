@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: center;
+        }
+
+        body {
+            font-family: sans-serif;
+            color: rgb(74, 73, 73);
+        }
+
+        #main-subtitle {
+            margin: 50px 0;
+
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        .table {
+            width: calc(100vw - 20px);
+
+        }
+
+        th {
+            text-align: left;
+            border-bottom: 1px solid;
+            width: 100px;
+
+        }
+
+        td {
+            width: 100px;
+            border-bottom: 1px solid rgb(235, 226, 226);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Curso JavaScript Completo</h1>
+    <h2 id="main-subtitle">Média dos alunos</h2>
+
+    <table class="table jsTable">
+
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Nota 3</th>
+                <th>Nota 4</th>
+                <th>Nota 5</th>
+                <th>Média</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr class="aluno">
+                <td class="aluno-nome">Gertrude</td>
+                <td class="n1">10</td>
+                <td class="n2">8.5</td>
+                <td class="n3">9</td>
+                <td class="n4">7.5</td>
+                <td class="n5">10</td>
+                <td class="aluno-m"></td>
+            </tr>
+
+            <tr class="aluno">
+                <td class="aluno-nome">Rey</td>
+                <td class="n1">5</td>
+                <td class="n2">8.5</td>
+                <td class="n3">6.5</td>
+                <td class="n4">7.5</td>
+                <td class="n5">10</td>
+                <td class="aluno-m"></td>
+            </tr>
+            <tr class="aluno">
+                <td class="aluno-nome">Jessilda</td>
+                <td class="n1">8</td>
+                <td class="n2">8.5</td>
+                <td class="n3">7</td>
+                <td class="n4">7.5</td>
+                <td class="n5">10</td>
+                <td class="aluno-m"></td>
+            </tr>
+            <tr class="aluno">
+                <td class="aluno-nome">Lindóia</td>
+                <td class="n1">6.5</td>
+                <td class="n2">8.5</td>
+                <td class="n3">10</td>
+                <td class="n4">7.5</td>
+                <td class="n5">10</td>
+                <td class="aluno-m"></td>
+            </tr>
+            <tr class="aluno">
+                <td class="aluno-nome">Creysson</td>
+                <td class="n1">10</td>
+                <td class="n2">9.5</td>
+                <td class="n3">10</td>
+                <td class="n4">8.5</td>
+                <td class="n5">10</td>
+                <td class="aluno-m"></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+
+
+
+
+    <script src="../meuframework.js"></script>
+
+    <script>
+        (function coletaMedia() {
+
+            var trs = document.querySelectorAll('.aluno');
+
+            for (var x = 0; trs[x]; x++) {
+
+                var linhaAluno = trs[x];
+                var n1, n2, n3, n4, media;
+                var nota = linhaAluno.querySelectorAll('td')
+
+                n1 = converteNota(nota[1])
+                n2 = converteNota(nota[2])
+                n3 = converteNota(nota[3])
+                n4 = converteNota(nota[4])
+                media = calculaMedia(n1, n2, n3, n4);
+                linhaAluno.querySelector('.aluno-m').textContent = media;
+
+            }
+
+            function converteNota(td) {
+                return parseFloat(td.textContent);
+            }
+
+        })()
+    </script>
+
+</body>
+
+</html>

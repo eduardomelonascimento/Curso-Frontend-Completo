@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body onclick="hack()">
+
+
+    <h1>Curso JavaScript Completo</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam possimus iusto adipisci ipsa voluptate fugit eum dolorum, laudantium debitis laborum ea ducimus illum, quo nam eius, obcaecati libero culpa! Maxime. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus accusantium harum dolorem veritatis quasi tenetur, omnis nesciunt enim, obcaecati magnam libero in commodi exercitationem tempora blanditiis possimus, dignissimos nostrum consequuntur!</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam possimus iusto adipisci ipsa voluptate fugit eum dolorum, laudantium debitis laborum ea ducimus illum, quo nam eius, obcaecati libero culpa! Maxime. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus accusantium harum dolorem veritatis quasi tenetur, omnis nesciunt enim, obcaecati magnam libero in commodi exercitationem tempora blanditiis possimus, dignissimos nostrum consequuntur!</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam possimus iusto adipisci ipsa voluptate fugit eum dolorum, laudantium debitis laborum ea ducimus illum, quo nam eius, obcaecati libero culpa! Maxime. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus accusantium harum dolorem veritatis quasi tenetur, omnis nesciunt enim, obcaecati magnam libero in commodi exercitationem tempora blanditiis possimus, dignissimos nostrum consequuntur!</p>
+
+    <script>
+
+        function hack(){
+            
+            var p = document.querySelectorAll(`p:nth-child(2n)`);
+
+            for (var i = 0; p[i]; i++) {
+                var paragrafos = p[i];
+                paragrafos.textContent = `${i+1} Esse site foi hackeado por [Eduardo Melo]`;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

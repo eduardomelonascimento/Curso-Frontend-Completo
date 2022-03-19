@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: center;
+        }
+
+        body {
+            font-family: sans-serif;
+            color: rgb(74, 73, 73);
+        }
+
+        #main-subtitle {
+            margin: 50px 0;
+
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        .table {
+            width: calc(100vw - 20px);
+
+        }
+
+        th {
+            text-align: left;
+            border-bottom: 1px solid;
+            width: 100px;
+
+        }
+
+        td {
+            width: 100px;
+            border-bottom: 1px solid rgb(235, 226, 226);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Curso JavaScript Completo</h1>
+    <h2 id="main-subtitle">Média dos alunos</h2>
+
+    <table class="table jsTable">
+
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Nota 3</th>
+                <th>Nota 4</th>
+                <th>Média</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr class="aluno">
+                <td class="aluno-nome">Cailane</td>
+                <td class="n1">10</td>
+                <td class="n2">8.5</td>
+                <td class="n3">9</td>
+                <td class="n4">7.5</td>
+                <td class="aluno-m"></td>
+            </tr>
+
+            <tr class="aluno">
+                <td class="aluno-nome">Edrick</td>
+                <td class="n1">5</td>
+                <td class="n2">8.5</td>
+                <td class="n3">6.5</td>
+                <td class="n4">7.5</td>
+                <td class="aluno-m"></td>
+            </tr>
+            <tr class="aluno">
+                <td class="aluno-nome">Gileno</td>
+                <td class="n1">8</td>
+                <td class="n2">8.5</td>
+                <td class="n3">7</td>
+                <td class="n4">7.5</td>
+                <td class="aluno-m"></td>
+            </tr>
+            <tr class="aluno">
+                <td class="aluno-nome">Amabile</td>
+                <td class="n1">6.5</td>
+                <td class="n2">8.5</td>
+                <td class="n3">10</td>
+                <td class="n4">7.5</td>
+                <td class="aluno-m"></td>
+            </tr>
+            <tr class="aluno">
+                <td class="aluno-nome">Cecília</td>
+                <td class="n1">10</td>
+                <td class="n2">9.5</td>
+                <td class="n3">10</td>
+                <td class="n4">8.5</td>
+                <td class="aluno-m"></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+
+
+
+
+    <script src="../meuframework.js"></script>
+
+    <script>
+        (function coletaMedia() {
+
+
+            var trs = document.querySelectorAll('.aluno'); //Insere toda linha da tabela que possua a classe 'aluno' dentro da variável trs
+
+            for (var x = 0; trs[x]; x++) { //Executa um loop que percorre cada linha inserida em trs
+
+                var linhaAluno = trs[x];
+                var media;
+                var tds = linhaAluno.querySelectorAll('td'); //Insere cada célula/td de uma tr de class 'aluno' na tag tds
+                var notas = recuperaNotas(tds); //Chama a função recuperaNotas, passando as tds como parâmetro, para que a variável notas receba apenas dados que podem ser convertidos para números e que não sejam uma string vazia e retorna 4 arrays contendo 4 notas
+                var media = calculaMedia.apply(this, notas); //Chama a função calculaMedia passando as 4 arrays como parâmetro.
+                linhaAluno.querySelector('.aluno-m').textContent = media; // Insere o resultado do cálculo da média na de classe 'aluno-m'
+
+            }
+
+            function recuperaNotas(tds) {
+                var array = [];
+                for (var x = 0; tds[x]; x++) {
+                    if (!isNaN(tds[x].textContent) && tds[x].textContent !== '') {
+                        array.push(Number(tds[x].textContent));
+                    }
+                }
+                return array;
+            }
+
+        })()
+    </script>
+
+</body>
+
+</html>
