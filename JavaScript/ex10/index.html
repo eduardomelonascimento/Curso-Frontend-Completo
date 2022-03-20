@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #efefef;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Curso JavaScript Completo</h1>
+
+    <form action="#">
+        <label for="user">Usuário: <input type="text" id="user" name="user"></label>
+        <label for="pass">Senha: <input type="text" id="pass" name="pass"></label>
+        <button id="btn">Entrar</button>
+    </form>
+
+
+    <script>
+
+        (function () {
+            'use strict';
+            var $user = document.getElementById('user');
+            var $pass = document.getElementById('pass');
+            var $button = document.getElementById('btn');
+
+            $button.addEventListener('click', function () {
+              if (!$user.value || !$pass.value) {
+                  alert('Preencha todos os campos')
+              }
+                
+                
+            });
+
+        })()
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

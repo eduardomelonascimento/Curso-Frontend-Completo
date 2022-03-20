@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JavaScript Completo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        .container {
+            background-color: #efefef;
+        }
+        #d1 {
+            background-color: tomato;
+            padding: 25px;
+        }
+        #d1 span {
+            background-color: dodgerblue;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Curso JavaScript Completo</h1>
+        <button id="btn1" onclick="clicar()">BTN1</button>
+        <button id="btn2">BTN2</button>
+        <button id="btn3">BTN3</button>
+    </div>
+
+    <div class="container">
+        
+        <h1>Propagação de eventos</h1>
+
+        <div id="d1">
+            texto solto na div
+            <span>texto dentro da span</span>
+        </div>
+
+
+    </div>
+
+    <div class="container">
+
+        <h1>Delegação de eventos</h1>
+
+        <ul>
+            <li>Lista 1</li>
+            <li>Lista 2</li>
+            <li>Lista 3</li>
+        </ul>
+
+    </div>
+
+    <script>
+
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+        
+        btn2.onclick = clicar;
+        
+        function clicar(){
+            alert('Clicou');
+        }
+
+        btn3.addEventListener('click', function(){
+            alert('Clicou com DOM level 2')
+        })
+       
+
+        var $d1 = document.querySelector('#d1');
+        var $d1Span = document.querySelector('#d1 span');
+
+        $d1Span.addEventListener('click', function(){
+            // console.log('Clicou na span');
+        });
+        $d1.addEventListener('click', function(e){
+        //    console.log('Clicou na div');
+           e.stopPropagation();
+        });
+        document.addEventListener('click', function(e){
+             console.log('Clicou no document');
+            // console.log(e.currentTarget)
+            // console.log(this)
+            // console.log(e.target)
+        });
+        
+        var $ul = document.querySelector('ul');
+        var $li = document.querySelectorAll('li');
+        
+        // for (var i = 0; $li[i]; i++) {
+        //     $li[i].addEventListener('click', function(e){
+        //         e.stopPropagation;
+        //         console.log(`Clicou na li`)
+        //     })
+        // }
+
+            $ul.addEventListener('click', function(e){
+        
+                console.log(this);
+                console.log(e.currentTarget);
+                console.log(e.target);
+                if (e.target.nodeName == 'LI') {
+                    alert('Clicou na LI');
+                }
+            })
+
+
+
+
+    </script>
+
+</body>
+
+
+</html>
