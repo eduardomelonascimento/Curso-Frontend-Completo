@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JavaScript Completo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #efefef;
+            text-align: center;
+        }
+
+        button {
+            width: calc(33% - 15px);
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Curso JavaScript Completo</h1>
+
+        <fieldset>
+
+            <button class="button">Botão 1</button>
+            <button class="button">Botão 2</button>
+            <button class="button">Botão 3</button>
+            <button class="button">Botão 4</button>
+            <button class="button">Botão 5</button>
+            <button class="button">Botão 6</button>
+            <button class="button">Botão 7</button>
+            <button class="button">Botão 8</button>
+            <button class="button">Botão 9</button>
+
+        </fieldset>
+
+    </div>
+
+
+
+    <script>
+
+        (function () {
+            'use strict';
+
+            var $btns = document.querySelectorAll('.button');
+
+            for (var i = 0; i < $btns.length; i++) {
+                $btns[i].addEventListener('click', clicou);
+            }
+
+            function clicou() {
+                console.log(this.textContent)
+            }
+
+        })()
+
+    </script>
+
+</body>
+
+
+</html>

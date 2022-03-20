@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JavaScript Completo</title>
+    <style>
+        * {
+            width: fit-content;
+        }
+
+        body,
+        html {
+            font-family: sans-serif;
+            background-color: #efefef;
+            width: 100% !important;
+        }
+
+        .done {
+            text-decoration: line-through;
+            color: rgb(99, 152, 19);
+        }
+
+        button {
+            width: calc(33% - 15px);
+            margin: 5px;
+        }
+
+        .container {
+            margin: 0 auto;
+        }
+
+        li {
+            list-style-position: inside;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Curso JavaScript Completo</h1>
+
+        <fieldset>
+
+            <form action="#">
+
+                <label>Nova atividade: <input type="text" id="input" placeholder="Estudar React..."></label>
+                <input type="submit" value="Adicionar" id="btn">
+
+            </form>
+
+            <ul>
+                <li>Estudar JS</li>
+                <li>Estudar Java</li>
+                <li>Estudar Bootstrap</li>
+            </ul>
+
+        </fieldset>
+
+    </div>
+
+
+
+    <script>
+
+
+        (function () {
+            'use strict'
+
+            var $input = document.querySelector('#input');
+            var $btn = document.querySelector('#btn');
+            var $ul = document.querySelector('ul');        
+
+            $input.addEventListener('keyup', addTaskBykeyboard)
+
+            $btn.addEventListener('click', addTask);
+
+            $ul.addEventListener('click', function (e) {
+                if (e.target.nodeName === 'LI') {
+                    markAsDone(e.target);
+                    removeTask(e.target);
+                }
+            })
+            
+            function addTask() {
+
+                var li = document.createElement('li');
+                var text = document.createTextNode($input.value)
+
+                li.appendChild(text);
+
+                $ul.appendChild(li);
+
+                $input.value = ''
+                $input.focus();
+
+
+            }
+            
+            function addTaskBykeyboard(e) {
+                if (e.keyCode == 13) {
+                    addTask;
+                }
+            }
+
+            function markAsDone(li) {
+                li.classList.toggle('done');
+            }
+ 
+            function removeTask(li) {
+                if (confirm(`Deseja realmente remover a tarefa '${li.textContent}'?`)) {
+                    li.parentNode.removeChild(li);
+                }
+            }
+
+        })()
+
+    </script>
+
+</body>
+
+
+</html>
