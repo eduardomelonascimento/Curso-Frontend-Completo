@@ -59,7 +59,6 @@
         rodando = false;
         clearInterval(intervalo);
     }
-
     function formataTempo(ms) {
         if (ms < 1000) {
             return `${ms}s`;
@@ -74,7 +73,7 @@
             var m = parseInt(ms / (60000));
             var s = parseInt(ms / 1000 - (m * 60));
             var c = ms - (s * 1000) - (m * 60 * 1000);
-            var h = (m / 60);
+            var h = parseInt(m / 60);
             if (s < 10 && m < 10) {
                 return `0${m}:0${s}:${c}s`
             }
@@ -85,5 +84,5 @@
             return `${h}:${m}:${s}s`
         }
     }
-
+    
 })()
