@@ -19,7 +19,7 @@
             var peso = Number(prompt('Peso'));
             var altura = Number(prompt('Altura'));
             var classificacao = classificaIMC(calculaIMC(peso, altura));
-            console.log(`Classificação do IMC: ${classificacao}`)
+            console.log(`Classificação do IMC: ${Math.round(calculaIMC(peso, altura))}. ${classificacao}`)
 
             function calculaIMC(p, a) {
                 return p / (a ** 2);

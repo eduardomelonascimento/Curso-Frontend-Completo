@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: sans-serif;
+            background-color: #efefef;
+
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #banner {
+            display: none;
+            max-width: 500px;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 0 1000px rgba(0, 0, 0, .7);
+            border-radius: 15px;
+            padding: 0 1rem;
+        }
+
+        #banner .banner-close {
+            position: absolute;
+            top: 22px;
+            right: 16px;
+            cursor: pointer;
+        }
+
+        #banner p {
+            line-height: 1.2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Curso JavaScript Completo</h1>
+
+    <div id="banner">
+
+        <h2>Banner</h2>
+        <button class="banner-close">X</button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit recusandae labore facilis. Fugiat labore
+            incidunt odio assumenda dolorem recusandae, deleniti in ipsa animi earum accusantium laudantium beatae
+            cupiditate nihil eius.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit recusandae labore facilis. Fugiat labore
+            incidunt odio assumenda dolorem recusandae, deleniti in ipsa animi earum accusantium laudantium beatae
+            cupiditate nihil eius.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit recusandae labore facilis. Fugiat labore
+            incidunt odio assumenda dolorem recusandae, deleniti in ipsa animi earum accusantium laudantium beatae
+            cupiditate nihil eius.</p>
+
+    </div>
+
+    <script>
+
+        (function () {
+            var $banner = document.querySelector('#banner');
+            var $btnBanner = document.querySelector('.banner-close');
+            var intervaloRemoveBanner = null;
+
+            $btnBanner.addEventListener('click', removeBanner)
+
+            setTimeout(mostraBanner, 3000);
+            
+
+            function mostraBanner() {
+                $banner.style.display = 'block';
+                intervaloRemoveBanner = (setTimeout(removeBanner, 10000));
+            }
+
+            function removeBanner() {
+                $btnBanner.removeEventListener('click', removeBanner)
+                $banner.parentNode.removeChild($banner);
+                clearTimeout(intervaloRemoveBanner);
+            }
+
+            
+        })()
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #efefef;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Curso JavaScript Completo</h1>
+
+    <script>
+
+        var n = -1;
+
+        var timeout = setTimeout(mostraN, 1000);
+
+        var interval = setInterval(mostraN, 1000);
+
+
+        function mostraN() {
+            n++
+            console.log(n);
+            document.querySelector('h1').innerHTML = n;
+            if (n >= 10) {
+                clearInterval(interval);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

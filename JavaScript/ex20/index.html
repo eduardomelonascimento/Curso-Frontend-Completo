@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #efefef;
+
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #display {
+            text-align: left;
+        }
+
+        #relogio {
+            max-width: 500px;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            border-radius: 15px;
+            padding: 0 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Curso JavaScript Completo</h1>
+
+    <div>
+
+        <h1 id="display">00:00s</h1>
+
+        <button class="iniciar">Iniciar</button>
+        <button class="pausar">Pausar</button>
+        <button class="parar">Parar</button>
+    </div>
+
+    <script>
+
+        (function () {
+            'use strict'
+
+            var $display = document.querySelector('#display');
+            var $iniciar = document.querySelector('.iniciar')
+            var $pausar = document.querySelector('.pausar');
+            var $parar = document.querySelector('.parar');
+
+            var tsClickIniciar;
+            var tsClickPausar;
+            var tsTempoDecorrido;
+            var rodando = false;
+            var intervalo = null;
+
+            $iniciar.addEventListener('click', iniciar)
+            $pausar.addEventListener('click', pausar);
+
+            function iniciar() {
+                tsClickIniciar = Date.now();
+                iniciarCronometro();
+                rodando = true;
+            }
+
+            function pausar() {
+                
+                if (rodando) {
+                    clearInterval(intervalo);
+                
+                    tsClickPausar = Date.now();
+                    tsTempoDecorrido += (tsClickPausar - tsClickIniciar);
+                    rodando = false;
+                } else {
+                    tsClickIniciar = Date.now;
+                    iniciarCronometro(tsTempoDecorrido);
+                    rodando = true;
+                }
+            }
+
+            function iniciarCronometro(tempoDecorrido) {
+                var ms = tempoDecorrido || 0;
+                intervalo = setInterval(function () {
+                    var tsClickAgora = Date.now();
+                    var diff = (tsClickAgora - tsClickIniciar);
+                    $display.textContent = formataTempo(diff + ms);
+                }, 100)
+                console.log(intervalo)
+            }
+
+            function formataTempo(ms) {
+                if (ms < 1000) {
+                    return `${ms}s`;
+                } else if (ms < 60000) {
+                    var s = parseInt(ms / 1000);
+                    var c = ms - (s * 1000);
+                    return `${s}:${c}s`;
+                } else {
+                    var m = parseInt(ms / (60000));
+                    var s = parseInt(ms / 1000 - (m * 60));
+                    var c = ms - (s * 1000) - (m * 60 * 1000);
+                    return `${m}:${s}:${c}s`
+                }
+            }
+
+        })()
+
+
+    </script>
+
+</body>
+
+</html>
