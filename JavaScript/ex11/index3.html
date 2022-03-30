@@ -80,7 +80,7 @@
 
             $btn.addEventListener('click', addTask);
 
-            $ul.addEventListener('click', function (e) {
+            $ul.addEventListener('click', (e) => {
                 if (e.target.nodeName === 'LI') {
                     markAsDone(e.target);
                     removeTask(e.target);
@@ -98,7 +98,6 @@
 
                 $input.value = ''
                 $input.focus();
-
 
             }
             
