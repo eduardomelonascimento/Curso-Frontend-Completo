@@ -2,7 +2,7 @@
 
 ## Curso de HTML, CSS e JavaScript do Professor Daniel Tápias Morales
 
-  O que eu aprendi até agora nesse curso?
+ #### O que eu aprendi nesse curso?
 
 - Aprendi mais sobre HTML semântico e como utilizar corretamente as tags semânticas.
 - Aprendi as ferramentas modernas do CSS para construção de Layouts complexos e responsivos: Grid Layout e CSS Flexbox.
